@@ -1,46 +1,48 @@
 text_prompts:
-  - A beautiful painting of a singular lighthouse, shining its light across a tumultuous sea of blood by greg rutkowski and thomas kinkade, Trending on artstation.
-  - yellow color scheme
+  - In winter, a super real landscape painting of Wuzhen under heavy snow, Jiangnan water town, realistic style,the peony mist is lingering,highly intricate detailed design,by Mark Adamus, lee madgwick,Emmanuel Shiu,Art photography,Trending on artstation:5
+  - Chinese myth,mystical, wise, made of rich dream fantasy,delicate, dreamy, ethereal, Backlight,light effect,8k hd wallpaper:3
+  - sharp focus, studio shot, intricate detail, highly detailed:3
+  - jpeg artifacts, blur, clouds, people:-1
 
 init_image:
-width_height: [ 1280, 768 ]
+width_height: [ 640, 1024 ]
 
 skip_steps: 0
 steps: 250
 
 init_scale: 1000
-clip_guidance_scale: 5000
+clip_guidance_scale: 50000
 
-tv_scale: 0
-range_scale: 150
-sat_scale: 0
+tv_scale: 100000
+range_scale: 150000
+sat_scale: 205000
 cutn_batches: 4
 
 diffusion_model: 512x512_diffusion_uncond_finetune_008100
-use_secondary_model: True
+use_secondary_model: False
 diffusion_sampling_mode: ddim
 
 perlin_init: False
 perlin_mode: mixed
 seed:
-eta: 0.8
+eta: 0.65
 clamp_grad: True
-clamp_max: 0.05
+clamp_max: 0.25
 
 randomize_class: True
 clip_denoised: False
 rand_mag: 0.05
 
 cut_overview: "[12]*400+[4]*600"
-cut_innercut: "[4]*400+[12]*600"
+cut_innercut: "[2]*200+[4]*300+[12]*400+[16]*100"
 cut_icgray_p: "[0.2]*400+[0]*600"
-cut_ic_pow: 1.
+cut_ic_pow: 10.
 
 save_rate: 20
 gif_fps: 20
 gif_size_ratio: 0.5
-n_batches: 4
-batch_size: 1
+n_batches: 1
+batch_size: 2
 batch_name:
 clip_models:
   - ViT-B-32::openai
